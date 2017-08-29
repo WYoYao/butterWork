@@ -33,4 +33,15 @@ function isExists(url) {
 let isPliuck = isExists('./publick');
 let isView=isExists('./View');
 
+// 递归通过方法
+function recursive(argu){
+    
+
+}
+
+    // return function(obj){
+
+        
+    // }
+
 
