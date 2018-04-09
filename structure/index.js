@@ -1,47 +1,32 @@
-const fs = require('fs');
-const path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 // Load the full build.
-const _ = require('lodash');
+var _ = require('lodash');
+
+var recursive = require('./recursive.js');
+var fileEvent = require('./fileEvent.js')
+
+
+var map = {
+    basicMng: {
+        personManage: {
+            list: '',
+            settine: '',
+        },
+        systemManage: {
+            list1: '',
+            settine1: '',
+        },
+        scheduleManage: {
+            list2: '',
+            settine2: '',
+        }
+    }
+}
 
 
 // 创建创建对应的文件结构
-function createStructure(map, p = __dirname) {
-
-
-
+function createStructure(map, p) {
 
 }
-
-
-function _deep(attr) {
-    // if(_)
-}
-
-
-function isExists(url) {
-
-    return new Promise((resolve, reject) => {
-        // 保存链接
-        let uri = path.join(__dirname, url);
-        // 验证是否存在不存在创建对应的目录
-        fs.access(uri, err => !err ? resolve() : fs.mkdir(uri, () => resolve()));
-
-    });
-}
-
-let isPliuck = isExists('./publick');
-let isView=isExists('./View');
-
-// 递归通过方法
-function recursive(argu){
-    
-
-}
-
-    // return function(obj){
-
-        
-    // }
-
-
