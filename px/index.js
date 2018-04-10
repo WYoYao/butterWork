@@ -7,25 +7,36 @@ const app = new Vue({
         max: "",
         input: false,
         now: "",
+        arr: [],
     },
     methods: {
         smt() {
-            this.input = (_.isNaN(+(this.max))) ? false : true;
+
+            if (_.isNaN(+(this.max))) return;
+
+            this.arr.push({
+                max: this.max,
+                now: 0,
+                value: 0,
+            })
         },
-        cel() {
-            this.input = false;
+        cel(index) {
+            this.arr.splice(index, 1);
         }
     },
     computed: {
-        value() {
-            try {
-                let { now, max } = this;
+        values() {
+
+            return this.arr.map((item) => {
+
+                let { now, max } = item;
                 now = +now;
                 max = +max;
-                return (_.isNumber(max) && _.isNumber(now)) ? (+(now / max).toFixed(2) * 100).toFixed() : 0;
-            } catch (error) {
-                return 0;
-            }
+                let value = (_.isNumber(max) && _.isNumber(now)) ? (+(now / max).toFixed(2) * 100).toFixed() : 0;
+
+                item.value = value;
+                return item;
+            })
         }
     }
 })
