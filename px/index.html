@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>像素转换成为的百分比</title>
+    <link rel="stylesheet" href="../node_modules/_bootstrap@4.0.0@bootstrap/dist/css/bootstrap.min.css">
+    <script src="../public/jquery.slim.min.js"></script>
+    <script src="../public/popper.min.js"></script>
+    <script src="../node_modules/_bootstrap@4.0.0@bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/_vue@2.5.16@vue/dist/vue.min.js"></script>
+    <script src="../node_modules/_lodash@4.17.4@lodash/lodash.min.js"></script>
+</head>
+
+<body>
+    <div class="card" id="app">
+        <h5 class="card-header">开始</h5>
+        <div class="card-body" v-show="!input">
+            <h5 class="card-title">准备</h5>
+            <p class="card-text">输入当前PSD的最大宽度</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" v-model="max" placeholder="输入当前PSD的最大宽度" aria-label="输入当前PSD的最大宽度" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" @click="smt()" type="button">确定</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" v-show="input">
+            <p class="card-text">
+                {
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; width:{{value}}%;
+                <br>}
+            </p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" v-model="now" placeholder="输入当前PSD的最大宽度" aria-label="输入当前PSD的最大宽度" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" @click="cel()" type="button">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
